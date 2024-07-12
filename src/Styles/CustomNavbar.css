@@ -1,0 +1,146 @@
+.CustomNavbar{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    background: grey;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.CustomNavbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    max-width: 100%;
+    background: #023246;
+}
+
+.logo-image{
+    height: 50px; /* Adjusted height */
+    width: auto; 
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu li{
+    padding: 15px 20px;
+    margin: 0 15px;
+}
+.menu li a{
+    color: #f6f6f6;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.CustomNavbar .menu li a:hover{
+    color: aqua;
+}
+
+/* From uiverse.io by @Ali-Tahmazi99 */
+button {
+ display: inline-block;
+ width: 150px;
+ height: 50px;
+ border-radius: 10px;
+ border: 1px solid #03045e;
+ position: relative;
+ overflow: hidden;
+ transition: all 0.5s ease-in;
+ z-index: 1;
+}
+
+button::before,
+button::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ width: 0;
+ height: 100%;
+ transform: skew(15deg);
+ transition: all 0.5s;
+ overflow: hidden;
+ z-index: -1;
+}
+
+button::before {
+ left: -10px;
+ background: #240046;
+}
+
+button::after {
+ right: -10px;
+ background: #5a189a;
+}
+
+button:hover::before,
+button:hover::after {
+ width: 58%;
+}
+
+button:hover span {
+ color: #e0aaff;
+ transition: 0.3s;
+}
+
+button span {
+ color: #03045e;
+ font-size: 18px;
+ transition: all 0.3s ease-in;
+}
+
+.menuBar{
+    display: none;
+    background: none;
+    border: none;
+    color: #f6f6f6;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: none;
+}
+
+@media screen and (max-width:600px)  {
+ .menuBar{
+    display: block;
+    cursor: pointer;
+ }   
+ .menu{
+    position: fixed; 
+    left: -100%;
+    top: 5rem;  
+    flex-direction: column;
+    color: #000;
+    width: 100%;
+    border-radius: 5%;
+    background-color: #023246;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0,0,0, 0.05);
+ }
+ .menu li{
+    color: #000;
+    font-size: 16px;
+    padding: 10px;
+    margin: 0;
+ }
+ .menu.active{
+    left: 0;
+ }
+ button{
+    display: none;
+ }
+}
