@@ -1,8 +1,7 @@
 .Header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Space items evenly */
-    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+    align-items: center;
     background-color: #023246;
     padding: 0 20px;
     width: 100%;
@@ -13,27 +12,40 @@
     box-sizing: border-box;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Optional: Limit the max width of the navbar */
+}
+
+.logo {
+    flex: 1; /* Logo takes up remaining space */
+}
+
 .logo img {
     height: 50px;
     width: auto;
 }
 
 .nav_links {
+    flex: 2; /* Navigation links take up twice the space of logo */
     display: flex;
-    align-items: center; /* Center vertically */
+    justify-content: center;
     list-style: none;
     padding: 0;
-    margin: 0; /* Remove default margin */
+    margin: 0;
 }
 
 .nav_links li {
     position: relative;
-    margin: 0 10px; /* Spacing between items */
+    margin: 0 10px;
 }
 
 .nav_links li i {
     position: absolute;
-    top: -18px; /* Adjust icon position */
+    top: -18px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 15px;
@@ -50,22 +62,16 @@
     font-weight: 500;
 }
 
-.nav_links a {
-    color: #f6f6f6;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 17px;
-    font-weight: 500;
-}
-
 .nav_links li:hover a,
 .nav_links li:hover i {
     color: aqua;
 }
 
 .search {
+    flex: 1; /* Search bar takes up remaining space */
     display: flex;
-    align-items: flex-end; /* Center vertically */
+    justify-content: flex-end; /* Align search bar to the right */
+    align-items: center;
 }
 
 .search__input {
@@ -78,7 +84,7 @@
     border-radius: 30px;
     width: 12em;
     transition: all ease-in-out .5s;
-    margin-right: 10px; /* Add some spacing to the button */
+    margin-right: 10px;
 }
 
 .search__input:hover,
@@ -99,20 +105,17 @@
 .search__button {
     border: none;
     background-color: #f4f2f2;
-    padding: 0.7rem 1rem; /* Match padding for uniformity */
+    padding: 0.7rem 1rem;
 }
 
 .search__button:hover {
     cursor: pointer;
+    background-color: #e4e2e2;
 }
 
 .search__icon {
     height: 1.3em;
     width: 1.3em;
-}
-
-.search__icon:hover {
-    color: #005582;
 }
 
 .menuBar {
@@ -178,5 +181,3 @@
         left: 0;
     }
 }
-
-/* End of header */

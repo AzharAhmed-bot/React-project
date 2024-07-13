@@ -1,6 +1,5 @@
 .profile {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
@@ -13,8 +12,16 @@ main {
     padding: 20px;
     gap: 40px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10rem;
+}
+.profile{
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
     justify-content: center;
-    margin-top: 6rem;
+    margin-top: 5rem;
 }
 .profile-container {
     display: flex;
