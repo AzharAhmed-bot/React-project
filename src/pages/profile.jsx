@@ -60,26 +60,26 @@ const profile = () => {
             <div className="feed-text">
                 <p>Mentor me</p>
                 <span>Company for mentors</span>
-                <button>Follow+</button>
+                <button className="follow-button">Follow+</button>
             </div>
 
             <img className="feed-pic" src={Mentee} alt="Mentor"/>
             <div className="feed-text">
                 <p>Mentee me</p>
                 <span>Company for mentees</span>
-                <button>Follow+</button>
+                <button className="follow-button">Follow+</button>
             </div>
             <img className="feed-pic" src={Google} alt="Mentor"/>
             <div className="feed-text">
                 <p>Google</p>
                 <span>Trainers for mentors</span>
-                <button>Follow+</button>
+                <button className="follow-button">Follow+</button>
             </div>
             <img className="feed-pic" src={Strath}alt="Mentor"/>
             <div className="feed-text">
                 <p>Strathmore University</p>
                 <span>Maisa program</span>
-                <button>Follow+</button>
+                <button className="follow-button">Follow+</button>
             </div>
         </div>
         </div>

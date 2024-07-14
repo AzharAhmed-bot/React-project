@@ -65,7 +65,7 @@ const faq =() =>{
             <h2>Find a Mentor</h2>
             <form className="search-form">
                 <input type="text" placeholder="Search by interest, industry, or skill"/>
-                <button type="submit">Search</button>
+                <button type="submit" className="search">Search</button>
             </form>
         </div>
     </div>

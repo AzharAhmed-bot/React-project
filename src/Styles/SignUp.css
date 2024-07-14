@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-.signin{
+.signup{
     box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1);
     margin-top: 2rem;
     display: flex;
@@ -14,7 +14,7 @@
     color: black;
 }
 
-.form{
+.signUp-form{
     background-color: white;
     height: auto;
     display: flex;
@@ -27,7 +27,7 @@
     position: relative;
     overflow: hidden;
 }
-.form::before {
+.signUp-form::before {
     position: absolute;
     content: "";
     width: 300px;
@@ -40,7 +40,7 @@
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
 }
-.form h1{
+.signUp-form h1{
     color: #8e928e;
     margin-bottom: 0.5rem;
 }
@@ -76,7 +76,7 @@
 ::placeholder {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.login-btn{
+.signup-btn{
     margin-top: 1rem;
     background-image: linear-gradient(130deg, #005582, #5B42F3 50%, #AF40FF);
     border: 0;
@@ -86,7 +86,7 @@
     color: white;
     cursor: pointer;
 }
-.bg-image{
+.signup-bg-image{
     background-color: #005582;
     width: 500px;
     display: flex;
@@ -95,7 +95,7 @@
     height: 0px;
     box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1);
 }
-.bg-image img{
+.signup-bg-image img{
     border-radius: 20% 0% 30% 0%;
     box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1);
 }

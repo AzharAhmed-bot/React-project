@@ -17,10 +17,13 @@ import Google from "../assets/google.png"
 import Strath from "../assets/strath.png"
 import Header from '../components/Header';
 import "../Styles/Home.css"
+import supabase from '../Config/supabase';
 
 
 const Home = () => {
     const [showReadMore, setShowReadMore] = useState(false);
+
+    console.log(supabase)
   
     // Refs for DOM elements
     const contentTextRef = useRef(null);
@@ -73,7 +76,7 @@ const Home = () => {
             <p>KonnectMe</p>
             <p>MentorMe</p>
             <p>See all</p>
-            <button>Discover more</button>
+            <button className='discover-button'>Discover more</button>
           </div>
         </div>
         <div className="all-posts">

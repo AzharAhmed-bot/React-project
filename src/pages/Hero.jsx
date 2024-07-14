@@ -113,10 +113,10 @@ const Hero = () => {
             </div>
             </div>
             <div className="manualnav">
-                <label for="r1" className="manual"></label>
-                <label for="r2" className="manual"></label>
-                <label for="r3" className="manual"></label>
-                <label for="r4" className="manual"></label>
+                <label htmlFor="r1" className="manual"></label>
+                <label htmlFor="r2" className="manual"></label>
+                <label htmlFor="r3" className="manual"></label>
+                <label htmlFor="r4" className="manual"></label>
             </div>
         </div>
         <div className="section4">
@@ -160,9 +160,9 @@ const Hero = () => {
         <p>A community of mentors and mentees striving for excellence</p>
         <button>JOIN TODAY</button>
       </div>
-      <div className="spline-background">
+      {/* <div className="spline-background">
         <Spline scene="https://prod.spline.design/os1oSM-b-HqGVbjp/scene.splinecode" />
-      </div>
+      </div> */}
                 </div>
                 
             </div>
