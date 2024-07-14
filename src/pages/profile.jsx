@@ -10,8 +10,9 @@ import "../Styles/profile.css"
 
 const profile = () => {
     return (
-        <div className="profile">
+            <>
             <Header />
+            <div className="profile">
            < div className="profile-container">
             <img className="profile-background" src={Connection} alt=""/>
             <img className="profile-picture" src={Person1} alt=""/>
@@ -82,6 +83,7 @@ const profile = () => {
             </div>
         </div>
         </div>
+        </>
 
 
 

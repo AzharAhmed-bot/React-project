@@ -1,12 +1,12 @@
 
 .Home {
   font-family: 'Times New Roman', Times, serif;
-  background-color: #f3f2ef;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
   margin-top: 100px;
+  gap: 1rem;
   padding: 20px;
 }
 
@@ -16,8 +16,8 @@
 }
 
 .recents {
-  position: sticky;
-  top:550px;
+  position: static;
+  
   background-color: #fff;
   border: 1px solid #d9d9d9;
   border-radius: 8px;
