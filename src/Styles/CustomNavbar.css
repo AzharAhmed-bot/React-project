@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
     background: grey;
+    width: 100%;
 }
 li {
     list-style: none;
@@ -13,10 +14,11 @@ a {
 }
 .CustomNavbar{
     display: flex;
+    margin-top: -5px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 20px;
-    max-width: 100%;
+    border-radius: 10px;
     background: #023246;
 }
 
@@ -51,10 +53,10 @@ a {
 }
 
 /* From uiverse.io by @Ali-Tahmazi99 */
-button {
+.login-button {
  display: inline-block;
- width: 150px;
- height: 50px;
+ width: 100px;
+ height: 30px;
  border-radius: 10px;
  border: 1px solid #03045e;
  position: relative;
@@ -63,8 +65,8 @@ button {
  z-index: 1;
 }
 
-button::before,
-button::after {
+.login-button::before,
+.login-button::after {
  content: '';
  position: absolute;
  top: 0;
@@ -76,27 +78,27 @@ button::after {
  z-index: -1;
 }
 
-button::before {
+.login-button::before {
  left: -10px;
  background: #240046;
 }
 
-button::after {
+.login-button::after {
  right: -10px;
  background: #5a189a;
 }
 
-button:hover::before,
-button:hover::after {
+.login-button:hover::before,
+.login-button:hover::after {
  width: 58%;
 }
 
-button:hover span {
+.login-button:hover span {
  color: #e0aaff;
  transition: 0.3s;
 }
 
-button span {
+.login-button span {
  color: #03045e;
  font-size: 18px;
  transition: all 0.3s ease-in;

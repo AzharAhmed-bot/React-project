@@ -8,8 +8,8 @@ const signUp = () => {
     return (
         <div className="signUp">
             <CustomNavbar />
-            <div className="signin">
-        <form className="form">
+            <div className="signup">
+        <form className="signUp-form">
             <h1>Create account!</h1>
             <div className="input-group">
                 <label for="name">First Name</label>
@@ -32,10 +32,10 @@ const signUp = () => {
                     <input type="password" id="password" name="password" placeholder="Enter password"/>
                 </div>
             </div>
-            <button className="login-btn">Sign Up</button>
+            <button className="signup-btn">Sign Up</button>
             <span className="sign-up">Already have an account? <a href="/login">Sign in</a></span>
         </form>
-        <div className="bg-image">
+        <div className="signup-bg-image">
             <img src={Signin} alt="Sign In"/>
         </div>
     </div>
