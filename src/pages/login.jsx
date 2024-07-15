@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaGithub, FaApple, FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaApple, FaGoogle,FaFacebook } from 'react-icons/fa';
 import Signin from '../assets/signin.png';
 import CustomNavbar from '../components/CustomNavbar';
 import Header from "../components/Header";
@@ -67,9 +67,9 @@ const Login = () => {
                 <FaGithub className="icon" />
                 Log in with GitHub
               </button>
-              <button className="login-btn apple" onClick={()=>login('apple')}>
-                <FaApple className="icon" />
-                Log in with Apple
+              <button className="login-btn apple" onClick={()=>login('facebook')}>
+                <FaFacebook className="icon" />
+                Log in with Facebook
               </button>
               <button className="login-btn google" onClick={()=>login('google')}>
                 <FaGoogle className="icon" />

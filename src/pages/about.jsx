@@ -1,4 +1,6 @@
 import React from "react";
+import "../Styles/about.css"
+
 import Story from "../assets/Story.png";
 import Why from "../assets/Why.png";
 import Kristina from "../assets/Kristina.jpg";
@@ -17,7 +19,7 @@ function about() {
         <CustomNavbar />
         <section className="about-section">
             <h1>About Us</h1>
-    
+          
             <div className="section-content">
                 <h2>OUR STORY</h2>
                 <div className="text-image-cont">
