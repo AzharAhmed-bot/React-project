@@ -18,12 +18,14 @@ import Strath from "../assets/strath.png"
 import Header from '../components/Header';
 import "../Styles/Home.css"
 import supabase from '../Config/supabase';
+import { useAppContext } from '../components/AppProvider';
+import CustomNavbar from '../components/CustomNavbar';
 
 
 const Home = () => {
+    const {user}=useAppContext();
     const [showReadMore, setShowReadMore] = useState(false);
 
-    console.log(supabase)
   
     // Refs for DOM elements
     const contentTextRef = useRef(null);
@@ -41,10 +43,11 @@ const Home = () => {
       contentTextRef.current.style.maxHeight = "none";
       setShowReadMore(false);
     };
-  
+    
+    console.log(user);
     return (
       <div className="Home">
-        <Header />
+        {user.length<=0 ?<Header/>:<CustomNavbar/>}
         <div className="left-content">
           <div className="profile-card">
             <img src={Person1} alt="Profile Picture" className="profile-pic" />

@@ -1,8 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import logo from '../assets/logo.png'; 
 import "../Styles/Header.css"
+import { useAppContext } from './AppProvider';
+import supabase from '../Config/supabase';
 
 const Header = () => {
+  const {user,setUser}=useAppContext();
   const navLinksRef = useRef(null);
   const searchBarRef = useRef(null);
 
@@ -37,6 +40,16 @@ const Header = () => {
     navLinksRef.current.classList.toggle('active');
   };
 
+
+  const handleLogOut=async()=>{
+    const {error}=await  supabase.auth.signOut();
+    if (error) {
+      console.error('Error logging out:', error.message);
+    } else {
+      setUser(null);
+    }
+
+  }
   return (
     <header className='Header'>
       <nav className="navbar">
@@ -47,8 +60,8 @@ const Header = () => {
             <li><i className="fas fa-home"></i><a href="/home">Home</a></li>
 		    <li><i className="fas fa-info"></i><a href="/about">About</a></li>
 		    <li><i className="fas fa-question-circle"></i><a href="/faq">FAQs</a></li>
-            <li><i className="fas fa-user"></i><a href="/profile">My Profile</a></li>
-            <li><a href="#premium">Try Premium</a></li>
+            <li ><i className="fas fa-user"></i><a href="/profile">My Profile</a></li>
+            <li className='logout' onClick={handleLogOut}>Log out</li>
         </ul>
         <div className="search">
           <input ref={searchBarRef} type="text" className="search_input" placeholder="Type your text" />

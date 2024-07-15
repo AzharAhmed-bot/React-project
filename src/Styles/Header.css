@@ -33,6 +33,7 @@
     flex: 2; /* Navigation links take up twice the space of logo */
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -41,6 +42,14 @@
 .nav_links li {
     position: relative;
     margin: 0 10px;
+}
+.logout{
+    color:  white;
+    background-color: black;
+    padding:0.3rem;
+    border-radius: 10px;
+    border: 1px solid white;
+    cursor: pointer;
 }
 
 .nav_links li i {
@@ -161,7 +170,7 @@
         font-size: 20px;
     }
 
-    .nav_links a {
+    .nav_links  {
         color: white;
         font-size: 16px;
         padding: 10px;
