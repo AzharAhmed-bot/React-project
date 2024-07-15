@@ -22,8 +22,7 @@ import { useAppContext } from '../components/AppProvider';
 import CustomNavbar from '../components/CustomNavbar';
 
 
-const Home = () => {
-    const {user}=useAppContext();
+const Home = ({user}) => {
     const [showReadMore, setShowReadMore] = useState(false);
 
   
@@ -46,8 +45,9 @@ const Home = () => {
     
     console.log(user);
     return (
+      <>
+      <Header/>
       <div className="Home">
-        {user.length<=0 ?<Header/>:<CustomNavbar/>}
         <div className="left-content">
           <div className="profile-card">
             <img src={Person1} alt="Profile Picture" className="profile-pic" />
@@ -317,6 +317,7 @@ const Home = () => {
             </div>
         </div>
         </div>
+        </>
       
     );
   }

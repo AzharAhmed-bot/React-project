@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CustomNavbar from "../components/CustomNavbar";
 import Header from "../components/Header";
 import Person1 from "../assets/person1.jpg"
@@ -12,8 +12,11 @@ import Spline from '@splinetool/react-spline';
 import "../Styles/Hero.css"
 import { useAppContext } from "../components/AppProvider";
 
-const Hero = () => {
-    const {user}=useAppContext();
+const Hero = ({user}) => {
+   
+    
+
+    console.log(user);
     return (
         <div className="Hero">
             {user?<Header/>:<CustomNavbar/>}

@@ -1,10 +1,11 @@
 import { Navigate } from "react-router-dom";
 import { useAppContext } from "./AppProvider";
 
-export default function PrivateRoute({ children }) {
-    const {user}=useAppContext();
+export default function PrivateRoute({ children}) {
+    
 
-    console.log(user);
+    const token=localStorage.getItem('sb-zkvotynkoewautmtfrcb-auth-token');
+    console.log(token);
 
-    return user ? children : <Navigate to='/login' />;
+    return token ? children : <Navigate to='/login' />;
 }

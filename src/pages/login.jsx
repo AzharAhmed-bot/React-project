@@ -1,31 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { FaGithub, FaApple, FaGoogle,FaFacebook } from 'react-icons/fa';
+import React, { useEffect } from 'react';
+import { FaGithub, FaGoogle, FaFacebook } from 'react-icons/fa';
 import Signin from '../assets/signin.png';
 import CustomNavbar from '../components/CustomNavbar';
 import Header from "../components/Header";
 import '../Styles/Login.css';
 import supabase from '../Config/supabase';
-import { useAppContext } from '../components/AppProvider';
 
-const Login = () => {
-  const {user,setUser}=useAppContext();
-
-  console.log(user);
-
+const Login = ({ user, setUser }) => {
   useEffect(() => {
     const getSession = async () => {
-      const { data: session, error } = await supabase.auth.getSession();
-      
+      const { data: { session }, error } = await supabase.auth.getSession();
       if (error) {
         console.error('Error fetching session:', error.message);
         return;
       }
-  
-      console.log(session);
+
       if (session) {
-        console.log(user);
+        setUser(session.user); 
       }
-  
+
       supabase.auth.onAuthStateChange((event, session) => {
         switch (event) {
           case 'SIGNED_IN':
@@ -39,46 +32,42 @@ const Login = () => {
         }
       });
     };
-  
+
     getSession();
-  }, []);
-  
+  }, [setUser]);
 
   const login = async (provider) => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: provider
-    });
+    const { error } = await supabase.auth.signInWithOAuth({ provider });
     if (error) {
-      console.error('Error logging in with GitHub:', error.message);
-    } else {
-      console.log(data);
+      console.error(`Error logging in with ${provider}:`, error.message);
     }
   };
 
   return (
     <>
-      {user?<Header/> : <CustomNavbar/> }
+      {user ? <Header /> : <CustomNavbar />}
       <div className="Login">
         <div className="signin">
-          {!user ? (
+          {user ? (
+            <div className="welcome-message">
+              <h1>Welcome Back!</h1>
+              <p>We're glad to see you again {user?.user_metadata?.name}.</p>
+            </div>
+          ) : (
             <div className="form">
               <h1>Welcome Back!!</h1>
-              <button className="login-btn github" onClick={()=>login('github')}>
+              <button className="login-btn github" onClick={() => login('github')}>
                 <FaGithub className="icon" />
                 Log in with GitHub
               </button>
-              <button className="login-btn apple" onClick={()=>login('facebook')}>
+              <button className="login-btn facebook" onClick={() => login('facebook')}>
                 <FaFacebook className="icon" />
                 Log in with Facebook
               </button>
-              <button className="login-btn google" onClick={()=>login('google')}>
+              <button className="login-btn google" onClick={() => login('google')}>
                 <FaGoogle className="icon" />
                 Log in with Google
               </button>
-            </div>
-          ) : (
-            <div className="logged-in-message">
-              <p>You are logged in.</p>
             </div>
           )}
           <div className="bg-image">
