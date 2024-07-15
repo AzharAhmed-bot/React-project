@@ -1,5 +1,6 @@
 import React from "react";
 import CustomNavbar from "../components/CustomNavbar";
+import Header from "../components/Header";
 import Person1 from "../assets/person1.jpg"
 import Peronalised from "../assets/personalized.png"
 import Untitled from "../assets/Untitled.png"
@@ -9,11 +10,13 @@ import Person5 from "../assets/person5.png"
 import Person4 from "../assets/person4.png"
 import Spline from '@splinetool/react-spline';
 import "../Styles/Hero.css"
+import { useAppContext } from "../components/AppProvider";
 
 const Hero = () => {
+    const {user}=useAppContext();
     return (
         <div className="Hero">
-            <CustomNavbar />
+            {user?<Header/>:<CustomNavbar/>}
             <section id="hero">
         <div className="container">
             <div className="hero-text">

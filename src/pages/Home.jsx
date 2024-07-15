@@ -18,9 +18,12 @@ import Strath from "../assets/strath.png"
 import Header from '../components/Header';
 import "../Styles/Home.css"
 import supabase from '../Config/supabase';
+import { useAppContext } from '../components/AppProvider';
+import CustomNavbar from '../components/CustomNavbar';
 
 
 const Home = () => {
+    const {user}=useAppContext();
     const [showReadMore, setShowReadMore] = useState(false);
 
     console.log(supabase)
@@ -44,7 +47,7 @@ const Home = () => {
   
     return (
       <div className="Home">
-        <Header />
+        {user?<Header/>:<CustomNavbar/>}
         <div className="left-content">
           <div className="profile-card">
             <img src={Person1} alt="Profile Picture" className="profile-pic" />
