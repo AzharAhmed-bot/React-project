@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useAppContext } from './components/AppProvider';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Hero from './pages/Hero';
 import About from './pages/about';
 import Booking from './pages/booking';
@@ -13,21 +12,21 @@ import PrivateRoute from './components/PrivateRoute';
 import AppProvider from './components/AppProvider';
 
 function App() {
+  const [user, setUser] = useState(null);
 
-  
   return (
     <div className="App">
       <AppProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Hero />} />
+            <Route path="/" element={<Hero user={user} />} />
             <Route path="/about" element={<About />} />
             <Route path="/booking" element={<Booking />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login user={user} setUser={setUser} />} />
             <Route path="/signUp" element={<SignUp />} />
-            <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/faq" element={<Faq />} />
+            <Route path="/home" element={<PrivateRoute ><Home user={user} /></PrivateRoute>} />
+            <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+            <Route path="/faq" element={<Faq />} />
           </Routes>
         </BrowserRouter>
       </AppProvider>

@@ -65,23 +65,23 @@
     transform: scale(1.05);
 }
 
-.login-btn.apple {
-    background: #000;
+.login-btn.facebook {
+    background: #3b5998;
     color: #fff;
 }
 
-.login-btn.apple:hover {
-    background: #4b66b1;
+.login-btn.facebook:hover {
+    background: #4a69ad;
     transform: scale(1.05);
 }
 
 .login-btn.google {
-    background: #233e78;
+    background: #dd4b39;
     color: #fff;
 }
 
 .login-btn.google:hover {
-    background: #233b6b;
+    background: #e74c3c;
     transform: scale(1.05);
 }
 
@@ -98,3 +98,15 @@
     height: auto;
     border-radius: 0 15px 15px 0;
 }
+
+.welcome-message{
+    margin-top: 4rem;
+}
+  
+  .welcome-message p {
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #666;
+  }

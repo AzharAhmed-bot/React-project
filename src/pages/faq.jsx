@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../components/Header";
 import "../Styles/faq.css"
+import CustomNavbar from "../components/CustomNavbar";
 
 const faq =() =>{
     return (
         <div className="faq">
-            <Header />
+            <CustomNavbar />
     <div className="faq-container">
         <div className="faq-items">
             <h2>Frequently Asked Questions</h2>
