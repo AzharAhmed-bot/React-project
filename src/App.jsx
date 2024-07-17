@@ -19,7 +19,7 @@ function App() {
       <AppProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Hero user={user} />} />
+            <Route path="/" element={<Hero />} />
             <Route path="/about" element={<About />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/login" element={<Login user={user} setUser={setUser} />} />
