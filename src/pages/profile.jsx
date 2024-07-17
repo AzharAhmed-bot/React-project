@@ -9,24 +9,32 @@ import Google from "../assets/google.png"
 import "../Styles/profile.css"
 
 const profile = () => {
+    const token = JSON.parse(localStorage.getItem('sb-zkvotynkoewautmtfrcb-auth-token'));
+    console.log(token); 
+
+    // Check if the token exists and parse it
+    const user = token?.user.user_metadata.full_name;
+    const email=token?.user.email;
+    const image=token?.user.user_metadata.picture;
+    // console.log(user);
     return (
             <>
             <Header />
             <div className="profile">
            < div className="profile-container">
             <img className="profile-background" src={Connection} alt=""/>
-            <img className="profile-picture" src={Person1} alt=""/>
+            <img className="profile-picture" src={image} alt=""/>
             <div className="profile-info">
-                <h1>John Doe</h1>
+                <h1>{user}</h1>
                 <h2>Software Engineer mentor</h2>
                 <p>Chicago, USA </p>
                 <p>Software Engineer | Mentor | Lecturer</p>
                 <ul className="contact-info">
-                    <li><a href="#"><i className="fas fa-envelope"></i>johndoe@gmail.com</a></li>
+                    <li><a href="#"><i className="fas fa-envelope"></i>{email}</a></li>
                     <li><a href="#"><i className="fab fa-linkedin"></i> My profile </a></li>
                 </ul>
                 <span>400 connections</span>
-                <button className="button">
+                <button className="profile-button">
                     Open to
                     <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
                       <path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path>

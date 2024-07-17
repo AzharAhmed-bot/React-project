@@ -5,7 +5,7 @@ export default function PrivateRoute({ children}) {
     
 
     const token=localStorage.getItem('sb-zkvotynkoewautmtfrcb-auth-token');
-    console.log(token);
+    
 
     return token ? children : <Navigate to='/login' />;
 }

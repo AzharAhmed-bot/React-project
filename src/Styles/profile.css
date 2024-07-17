@@ -128,11 +128,11 @@ main {
     transform: translate(4px);
   }
   
-  .button:hover::before {
+  .profile-button:hover::before {
     animation: shine 1.5s ease-out infinite;
   }
   
-  .button::before {
+  .profile-button::before {
     content: "";
     position: absolute;
     width: 100px;

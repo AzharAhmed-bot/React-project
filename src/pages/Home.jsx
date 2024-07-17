@@ -22,9 +22,14 @@ import { useAppContext } from '../components/AppProvider';
 import CustomNavbar from '../components/CustomNavbar';
 
 
-const Home = ({user}) => {
+const Home = () => {
     const [showReadMore, setShowReadMore] = useState(false);
 
+    const token = JSON.parse(localStorage.getItem('sb-zkvotynkoewautmtfrcb-auth-token'));
+
+    const userName = token?.user.user_metadata.full_name;
+    const image=token?.user.user_metadata.picture;
+    
   
     // Refs for DOM elements
     const contentTextRef = useRef(null);
@@ -43,16 +48,15 @@ const Home = ({user}) => {
       setShowReadMore(false);
     };
     
-    console.log(user);
     return (
       <>
       <Header/>
       <div className="Home">
         <div className="left-content">
           <div className="profile-card">
-            <img src={Person1} alt="Profile Picture" className="profile-pic" />
+            <img src={image} alt="Profile Picture" className="profile-pic" />
             <div className="profile-info">
-              <span className="profile-name">John Doe</span>
+              <span className="profile-name">{userName}</span>
               <span className="profile-title">Senior Mentor at TechCorp</span>
               <span className="profile-view"><a href="/profile">View Profile</a></span>
             </div>
@@ -117,84 +121,83 @@ const Home = ({user}) => {
               <span className="footer-item">↪️ Share</span>
             </div>
             <div>
-                Hello
             </div>
 
           </div>
-          <div class="post-card">
-                <div class="post-header">
-                    <img src={Postperson2} alt="Profile Picture" class="profile-pic"/>
-                    <div class="user-info">
-                        <span class="user-name">Alex Maunda</span>
-                        <span class="user-title">Peer mentor</span>
+          <div className="post-card">
+                <div className="post-header">
+                    <img src={Postperson2} alt="Profile Picture" className="profile-pic"/>
+                    <div className="user-info">
+                        <span className="user-name">Alex Maunda</span>
+                        <span className="user-title">Peer mentor</span>
                     </div>
                 </div>
-                <div class="post-content" id="post-content">
+                <div className="post-content" id="post-content">
                     <details>
                         <summary>Mentorship is more than just guidance; it's a journey of shared growth and development. With a mentor's wisdom and experience, mentees can unlock their full potential, overcome obstacles, and achieve their goals.</summary>
-                        <p class="content-text">
+                        <p className="content-text">
                             This dynamic relationship enriches both the mentor and mentee, creating a ripple effect of knowledge and success
                        </p>
                     </details>
                     
-                    <span class="read-more" id="read-more">Read more</span>
+                    <span className="read-more" id="read-more">Read more</span>
                 </div>
                 <div>
                     <img src={Post1} alt=""/>
                 </div>
-                <div class="post-footer">
-                    <span class="footer-item">👍 Like</span>
-                    <span class="footer-item">💬 Comment</span>
-                    <span class="footer-item">
+                <div className="post-footer">
+                    <span className="footer-item">👍 Like</span>
+                    <span className="footer-item">💬 Comment</span>
+                    <span className="footer-item">
                         <svg width="20" height="20" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M832 64H192C174.3 64 160 78.3 160 96V928C160 945.7 174.3 960 192 960H832C849.7 960 864 945.7 864 928V96C864 78.3 849.7 64 832 64ZM668 345.9L621.5 312L572 347.4V124H668V345.9Z" fill="blue"/>
                         </svg>
                         book
                     </span>
-                    <span class="footer-item">↪️ Share</span>
+                    <span className="footer-item">↪️ Share</span>
                 </div>
             </div>
-            <div class="post-card">
-                <div class="post-header">
-                    <img src={Postperson4} alt="Profile Picture" class="profile-pic"/>
-                    <div class="user-info">
-                        <span class="user-name">Kenneth Kaunda</span>
-                        <span class="user-title">Wellness Mentor</span>
+            <div className="post-card">
+                <div className="post-header">
+                    <img src={Postperson4} alt="Profile Picture" className="profile-pic"/>
+                    <div className="user-info">
+                        <span className="user-name">Kenneth Kaunda</span>
+                        <span className="user-title">Wellness Mentor</span>
                     </div>
                 </div>
-                <div class="post-content" id="post-content">
+                <div className="post-content" id="post-content">
                     <details>
                         <summary>A good mentor can be a beacon of inspiration and guidance. Mentorship helps bridge the gap between ambition and achievement, providing the tools and confidence needed to succeed.</summary>
                         <p class="content-text">
                             It's about building a supportive network that encourages continuous learning and professional development, fostering an environment where both mentors and mentees thrive.                        
                         </p>
                     </details>
-                    <span class="read-more" id="read-more">Read more</span>
+                    <span className="read-more" id="read-more">Read more</span>
                 </div>
                 <div>
                     <img src={Post2} alt=""/>
                 </div>
-                <div class="post-footer">
-                    <span class="footer-item">👍 Like</span>
-                    <span class="footer-item">💬 Comment</span>
-                    <span class="footer-item">
+                <div className="post-footer">
+                    <span className="footer-item">👍 Like</span>
+                    <span className="footer-item">💬 Comment</span>
+                    <span className="footer-item">
                         <svg width="20" height="20" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M832 64H192C174.3 64 160 78.3 160 96V928C160 945.7 174.3 960 192 960H832C849.7 960 864 945.7 864 928V96C864 78.3 849.7 64 832 64ZM668 345.9L621.5 312L572 347.4V124H668V345.9Z" fill="blue"/>
                         </svg>
                         book
                     </span>
-                    <span class="footer-item">↪️ Share</span>
+                    <span className="footer-item">↪️ Share</span>
                 </div>
             </div>
             <div class="post-card">
                 <div class="post-header">
                     <img src={Postperson3} alt="Profile Picture" class="profile-pic"/>
-                    <div class="user-info">
-                        <span class="user-name">Koffi Annan</span>
-                        <span class="user-title">Business Growth Mentor</span>
+                    <div className="user-info">
+                        <span className="user-name">Koffi Annan</span>
+                        <span className="user-title">Business Growth Mentor</span>
                     </div>
                 </div>
-                <div class="post-content" id="post-content">
+                <div className="post-content" id="post-content">
                     <details>
                         <summary>The value of mentorship lies in its ability to transform lives and careers. Mentors offer more than just advice; they provide a roadmap to success, helping mentees overcome challenges and seize opportunities.</summary>
                         <p class="content-text">
@@ -202,89 +205,89 @@ const Home = ({user}) => {
                        </p>
                     </details>
                     
-                    <span class="read-more" id="read-more">Read more</span>
+                    <span className="read-more" id="read-more">Read more</span>
                 </div>
                 <div>
                     <img src={Post3} alt=""/>
                 </div>
-                <div class="post-footer">
-                    <span class="footer-item">👍 Like</span>
-                    <span class="footer-item">💬 Comment</span>
-                    <span class="footer-item">
+                <div className="post-footer">
+                    <span className="footer-item">👍 Like</span>
+                    <span className="footer-item">💬 Comment</span>
+                    <span className="footer-item">
                         <svg width="20" height="20" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M832 64H192C174.3 64 160 78.3 160 96V928C160 945.7 174.3 960 192 960H832C849.7 960 864 945.7 864 928V96C864 78.3 849.7 64 832 64ZM668 345.9L621.5 312L572 347.4V124H668V345.9Z" fill="blue"/>
                         </svg>
                         book
                     </span>
-                    <span class="footer-item">↪️ Share</span>
+                    <span className="footer-item">↪️ Share</span>
                 </div>
             </div>
-            <div class="post-card">
-                <div class="post-header">
-                    <img src={Postperson5} alt="Profile Picture" class="profile-pic"/>
-                    <div class="user-info">
-                        <span class="user-name">John Malawi</span>
-                        <span class="user-title">Professional Development Mentor</span>
+            <div className="post-card">
+                <div className="post-header">
+                    <img src={Postperson5} alt="Profile Picture" className="profile-pic"/>
+                    <div className="user-info">
+                        <span className="user-name">John Malawi</span>
+                        <span className="user-title">Professional Development Mentor</span>
                     </div>
                 </div>
-                <div class="post-content" id="post-content">
+                <div className="post-content" id="post-content">
                     <details>
                         <summary>Effective mentorship is the cornerstone of professional advancement. By sharing their experiences and knowledge, mentors help mentees navigate their career paths with greater clarity and purpose.</summary>
-                        <p class="content-text">
+                        <p className="content-text">
                             This symbiotic relationship not only enhances personal growth but also strengthens the professional community, creating a culture of continuous improvement and support
                         </p>
                     </details>
                     
-                    <span class="read-more" id="read-more">Read more</span>
+                    <span className="read-more" id="read-more">Read more</span>
                 </div>
                 <div>
                     <img src={Post4} alt=""/>
                 </div>
-                <div class="post-footer">
-                    <span class="footer-item">👍 Like</span>
-                    <span class="footer-item">💬 Comment</span>
-                    <span class="footer-item">
+                <div className="post-footer">
+                    <span className="footer-item">👍 Like</span>
+                    <span className="footer-item">💬 Comment</span>
+                    <span className="footer-item">
                         <svg width="20" height="20" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M832 64H192C174.3 64 160 78.3 160 96V928C160 945.7 174.3 960 192 960H832C849.7 960 864 945.7 864 928V96C864 78.3 849.7 64 832 64ZM668 345.9L621.5 312L572 347.4V124H668V345.9Z" fill="blue"/>
                         </svg>
                         book
                     </span>
-                    <span class="footer-item">↪️ Share</span>
+                    <span className="footer-item">↪️ Share</span>
                 </div>
             </div>  
-            <div class="post-card">
-                <div class="post-header">
-                    <img src={Postperson6} alt="Profile Picture" class="profile-pic"/>
-                    <div class="user-info">
-                        <span class="user-name">Jacob Zuma</span>
-                        <span class="user-title">Leadership Coach</span>
+            <div className="post-card">
+                <div className="post-header">
+                    <img src={Postperson6} alt="Profile Picture" className="profile-pic"/>
+                    <div className="user-info">
+                        <span className="user-name">Jacob Zuma</span>
+                        <span className="user-title">Leadership Coach</span>
                     </div>
                 </div>
-                <div class="post-content" id="post-content">
+                <div className="post-content" id="post-content">
                     <details>
                         <summary>
                             Mentoring is a journey of mutual discovery and empowerment. Through mentorship, individuals can explore new perspectives, gain critical insights, and develop essential skills. 
                         </summary>
-                        <p class="content-text">
+                        <p className="content-text">
                             This relationship nurtures a supportive and enriching environment, where both mentor and mentee can grow and achieve their aspirations together.  
                         </p>
                     </details>
                     
-                    <span class="read-more" id="read-more">Read more</span>
+                    <span className="read-more" id="read-more">Read more</span>
                 </div>
                 <div>
-                    <img class="post-image" src={Post5} alt=""/>
+                    <img className="post-image" src={Post5} alt=""/>
                 </div>
                 <div class="post-footer">
-                    <span class="footer-item">👍 Like</span>
-                    <span class="footer-item">💬 Comment</span>
-                    <span class="footer-item">
+                    <span className="footer-item">👍 Like</span>
+                    <span className="footer-item">💬 Comment</span>
+                    <span className="footer-item">
                         <svg width="20" height="20" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M832 64H192C174.3 64 160 78.3 160 96V928C160 945.7 174.3 960 192 960H832C849.7 960 864 945.7 864 928V96C864 78.3 849.7 64 832 64ZM668 345.9L621.5 312L572 347.4V124H668V345.9Z" fill="blue"/>
                         </svg>
                         book
                     </span>
-                    <span class="footer-item">↪️ Share</span>
+                    <span className="footer-item">↪️ Share</span>
                 </div>
             </div> 
 
@@ -297,20 +300,20 @@ const Home = ({user}) => {
             <span>Company for mentors</span>
             <button>Follow+</button>
           </div>
-          <img class="feed-pic" src={Mentee} alt="Mentor"/>
-            <div class="feed-text">
+          <img className="feed-pic" src={Mentee} alt="Mentor"/>
+            <div className="feed-text">
                 <p>Mentee me</p>
                 <span>Company for mentees</span>
                 <button>Follow+</button>
             </div>
-            <img class="feed-pic" src={Google} alt="Mentor"/>
-            <div class="feed-text">
+            <img className="feed-pic" src={Google} alt="Mentor"/>
+            <div className="feed-text">
                 <p>Google</p>
                 <span>Trainers for mentors</span>
                 <button>Follow+</button>
             </div>
-            <img class="feed-pic" src={Strath} alt="Mentor"/>
-            <div class="feed-text">
+            <img className="feed-pic" src={Strath} alt="Mentor"/>
+            <div className="feed-text">
                 <p>Strathmore University</p>
                 <span>Maisa program</span>
                 <button>Follow+</button>
