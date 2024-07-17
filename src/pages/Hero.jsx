@@ -12,11 +12,12 @@ import Spline from '@splinetool/react-spline';
 import "../Styles/Hero.css"
 import { useAppContext } from "../components/AppProvider";
 
-const Hero = ({user}) => {
+const Hero = () => {
    
-    
+    const token = JSON.parse(localStorage.getItem('sb-zkvotynkoewautmtfrcb-auth-token'));
+    const user = token?.user.user_metadata.full_name;
 
-    console.log(user);
+    
     return (
         <div className="Hero">
             {user?<Header/>:<CustomNavbar/>}
